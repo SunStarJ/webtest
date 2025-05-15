@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>增强认证</title>
+</head>
+<body>
+
+<h2>请完成增强认证</h2>
+<button onclick="submitAuth()">模拟认证成功</button>
+
+<script>
+    function submitAuth() {
+        // 模拟认证成功，发送消息给父页面
+        window.parent.postMessage("1", "*");
+    }
+
+    // 兼容性添加事件监听器（可选）
+    function attachEventListener(type, listener) {
+        if (window.addEventListener) {
+            window.addEventListener(type, listener, false);
+        } else if (window.attachEvent) {
+            window.attachEvent("on" + type, listener);
+        }
+    }
+</script>
+
+</body>
+</html>
